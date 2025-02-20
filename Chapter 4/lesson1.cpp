@@ -55,9 +55,65 @@ void SwapM2(){
     cout<<" b : "<<b;
 }
 
-int main(){
-    // SwapM1();
 
-SwapM2();
+// *
+// **
+// ***
+void pattern1(int a =3){
+    int n =a;
+    for (int i = 1; i <=n; i++)
+    {
+        for (int j = 1; j<=i; j++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+
+// ***
+// **
+// *
+
+void pattern2(){
+    int n =3;
+    for (int i = 1; i <=n; i++)
+    {
+        for (int j = n; j >=i; j--)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+        
+    }
+}
+
+
+//     *
+//    **
+//   ***
+//  ****
+// *****
+void pattern3(){
+
+    int n =5;
+    for (int i = 1; i <=n; i++)
+    {
+        for(int j =1; j<=n; j++){
+            if (i+j>n)
+            {
+                cout<<"*";
+            }
+            else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+    }
+    
+}
+
+int main(){
+pattern3();
     return 0;
 }

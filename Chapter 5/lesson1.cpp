@@ -11,16 +11,24 @@ void TestPointer2(int &n ){
     cout<<"n : "<<&n;
 }
 
+void swap(int* a , int* b){
+    int temp = *a ;
+    *a = *b;
+    *b=temp;
+    cout<<" Fun "<<a<<" "<<b;
+}
+
 int main(){
 
-//    int a = 10;
-//    int b =20;
-//    cout<<"a : "<<&a<<endl;
-//    cout<<"b : "<<&b<<endl;
-// int a = 10;
-// cout<<"a : "<<&a<<endl;
-// TestPointer2(a);
- 
+int x =10 ;
+int y =20 ;
+cout<<" Before : ";
+cout<<"x : "<<x<<" y: "<<y<<endl;
+
+swap(&x,&y);
+
+cout<<" After : ";
+cout<<"x : "<<x<<" y: "<<y;
     return 0;
 
 
