@@ -5,20 +5,39 @@ void change(int arr[]){
 arr[2]=100000;
 }
 
+int BigNum(int arr[]){
+    int greater=0;
+    for(int i = 0; i<4; i++){
+        if (greater<arr[i])
+        {
+            greater =arr[i];
+           
+        }
+    }
+    return greater;
+}
+
+
+int* reverseArr(int arr[]){
+   static int revArr[4];
+
+    for (int i = 0; i <4; i++)
+    {
+       revArr[i] = arr[3-i];
+    }
+    
+    return revArr;
+}
+
 int main(){
-// int arr[3] = {10,30,40};
+int arr[4] = {58,20,50,20};
+// int result = BigNum(arr);
 
-// int sum = 0;
-// for (int i = 0; i < 3; i++)
-// {
-// sum+=arr[i];
-// }
+// cout<<" Big Number : "<<result;
+int* reveArr = reverseArr(arr);
 
-// cout<<sum;
-
-
-int int x ;
-cout<<sizeof(x);
-
+for(int i = 0 ; i<=3;i++){
+    cout<<reveArr[i]<<endl;
+}
     return 0;
 }
