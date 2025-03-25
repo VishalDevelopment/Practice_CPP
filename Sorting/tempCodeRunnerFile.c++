@@ -1,1 +1,3 @@
-=i+1
+for(auto i: arr){
+        cout<<i<<" ";
+    }
