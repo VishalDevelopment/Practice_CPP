@@ -8,13 +8,13 @@ int GetPivot(vector<int>& arr, int low, int high) {
     int j = high;
 
     while (i < j) {
-        while (i < high && arr[i] <= pivot) i++;  // Move right if element is <= pivot
-        while (j > low && arr[j] > pivot) j--;    // Move left if element is > pivot
-        if (i < j) swap(arr[i], arr[j]);         // Swap elements if indices are valid
+        while (i < high && arr[i] <= pivot) i++;  
+        while (j > low && arr[j] > pivot) j--;    
+        if (i < j) swap(arr[i], arr[j]);         
     }
     
     swap(arr[j], arr[low]);  
-    return j;                // Return the index of the pivot
+    return j;                
 }
 
 void QuickSort(vector<int>& arr, int low, int high) {
