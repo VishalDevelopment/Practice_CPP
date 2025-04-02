@@ -38,15 +38,15 @@ using namespace std;
 
 // Optimal Sol
 int MissingNo(vector<int> &arr) {
-  int n = arr.size();  // The actual size of the array
-  int expectedSum = n * (n + 1) / 2;  // Sum of numbers from 0 to n
+  int n = arr.size();  
+  int expectedSum = n * (n + 1) / 2; 
   int actualSum = 0;
 
   for (int i = 0; i < n; i++) {
-      actualSum += arr[i];  // Sum of elements in the array
+      actualSum += arr[i];  
   }
 
-  return expectedSum - actualSum;  // Missing number
+  return expectedSum - actualSum;  
 }
 
 
