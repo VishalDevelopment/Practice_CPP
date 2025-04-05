@@ -35,7 +35,7 @@ using namespace std;
 // Optimal Sol.(Detuch National Flag Algorithmn)
 void sort(vector<int> &arr){
     int low = 0,mid=0,high=arr.size()-1;
-    while(low<=high){
+    while(mid<=high){
         if(arr[mid]==0){
             swap(arr[low],arr[mid]);
             low++;
@@ -45,7 +45,7 @@ void sort(vector<int> &arr){
             mid++;
         }
         else if(arr[mid]==2){
-            swap(arr[low],arr[high]);
+            swap(arr[mid],arr[high]);
             high--;
         }
     }
