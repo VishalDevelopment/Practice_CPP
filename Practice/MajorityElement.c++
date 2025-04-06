@@ -52,6 +52,6 @@ for(int i = 0; i<n; i++){
 return element;
 }
 int main(){
-    vector<int> arr = {4,3,3};
+    vector<int> arr = {1,2,3,4};
     cout<<" Value : "<<MajorityElement(arr,arr.size());
 }
