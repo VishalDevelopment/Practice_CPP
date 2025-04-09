@@ -41,14 +41,14 @@ using namespace std;
 
 // Optimal 
 int maxProfit(vector<int> arr){
-    int size = arr.size();
-    int sell =arr[0];
-    int buy = 0;
+    int mini =arr[0];
+    int cost = 0;
     int profit = 0;
-    for(int i=0; i<size; i++){
-        buy= arr[i] -sell;
-        sell = min(sell,arr[i]);
-        profit = max(profit,buy);
+
+    for(int i=1; i<arr.size(); i++){
+        cost= arr[i] - mini;
+        profit = max(profit,cost);
+        mini = min(mini,arr[i]);
     }
 
     return profit;
@@ -56,7 +56,7 @@ int maxProfit(vector<int> arr){
 
 int main()
 {
-    vector<int> arr = {};
+    vector<int> arr = {2,3,1,3,5,2};
     cout << "Profit : " << maxProfit(arr);
     return 0;
 }
