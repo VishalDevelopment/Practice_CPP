@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Bruteforce Sol . 
 // vector<int> Array_Leader(vector<int> &arr){
 //     vector<int> v;
 //     int n = arr.size();
@@ -19,6 +20,7 @@ using namespace std;
 //     return v;
 // }
 
+//Optimal Sol.
 vector<int> Array_Leader(vector<int> arr)
 {
     vector<int> vec;
