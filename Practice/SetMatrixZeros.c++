@@ -81,41 +81,74 @@ using namespace std;
 // }
 
 // Optimal Sol.
-void setzeros(int arr[3][3], int row, int column) {
-    bool r = false, c = false;
-    for (int i = 0; i < row; i++) {
-        for (int j = 0; j < column; j++) {
-            if (arr[i][j] == 0) {
-                if (i == 0) r = true;
-                if (j == 0) c = true;
-                arr[i][0] = 0;
-                arr[0][j] = 0;
-            }
-        }
-    }
+// void setzeros(int arr[3][3], int row, int column) {
+//     bool r = false, c = false;
+//     for (int i = 0; i < row; i++) {
+//         for (int j = 0; j < column; j++) {
+//             if (arr[i][j] == 0) {
+//                 if (i == 0) r = true;
+//                 if (j == 0) c = true;
+//                 arr[i][0] = 0;
+//                 arr[0][j] = 0;
+//             }
+//         }
+//     }
 
-    for (int i = 1; i < row; i++) {
-        for (int j = 1; j < column; j++) {
-            if (arr[i][0] == 0 || arr[0][j] == 0) {
-                arr[i][j] = 0;
-            }
-        }
-    }
+//     for (int i = 1; i < row; i++) {
+//         for (int j = 1; j < column; j++) {
+//             if (arr[i][0] == 0 || arr[0][j] == 0) {
+//                 arr[i][j] = 0;
+//             }
+//         }
+//     }
 
-    if (r) {
-        for (int j = 0; j < column; j++) {
+//     if (r) {
+//         for (int j = 0; j < column; j++) {
+//             arr[0][j] = 0;
+//         }
+//     }
+
+//     if (c) {
+//         for (int i = 0; i < row; i++) {
+//             arr[i][0] = 0;
+//         }
+//     }
+// }
+
+// Practice to write optimize code by own
+void setzeros(int arr[3][3],int row, int column){
+bool r = false , c = false;
+
+for(int i = 0; i<row; i++){
+    for(int j = 0; j<column; j++){
+        if(arr[i][j]==0){
+            if(i==0) r= true;
+            if(c==0) c=true;
             arr[0][j] = 0;
-        }
-    }
-
-    if (c) {
-        for (int i = 0; i < row; i++) {
-            arr[i][0] = 0;
+            arr[i][0]= 0;
         }
     }
 }
 
+for(int i=1; i<row; i++){
+    for(int j=1; j<column; j++){
+        if(arr[i][0]==0 || arr[0][j]==0){
+            arr[i][j] =0;
+        }
+    }
+}
 
+if(c){
+    for(int i = 0; i<row; i++){
+        arr[i][0]=0;
+    }
+}
+if(r){
+    for(int j = 0;j<column; j++){
+        arr[0][j]=0;
+    }
+}
+}
 
 int main(){
 
