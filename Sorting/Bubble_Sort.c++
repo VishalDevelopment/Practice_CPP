@@ -2,27 +2,42 @@
 using namespace std;
 
  void BubbleSort(vector<int> &arr){
-
-    int size = arr.size();
-    for(int i = 0; i<size; i++){
-        int didSwap =0;
-    for(int j = 0; j<size-i+1; j++){
-        if(arr[j]>arr[j+1]){
-            swap(arr[j],arr[j+1]);
-            didSwap =1;
+    for(int i = 0; i<arr.size()-1; i++){
+        int sp = false;
+        for(int j = 0; j<arr.size()-1-i; j++){
+            if(arr[j]<arr[j+1]){
+                swap(arr[j],arr[j+1]);
+            sp = true;
+            }
         }
-        if(didSwap==0){
+        if(sp==false){
             break;
         }
     }
 }
 
+void SelectionSort(vector<int> &arr){
+    for(int i = 0 ; i<arr.size()-1; i++){
+        int mini = i;
+        for(int j = i+1; j<arr.size(); j++ ){
+            if(arr[mini]>arr[j]){
+                mini = j;
+            }
+        }
+        swap(arr[mini],arr[i]);
+    }
 }
-
-
+void InsertionSort(vector<int> &arr){
+    for(int i = 0 ; i<arr.size()-1; i++){
+        int prev = i+1;
+        while(prev>0 && arr[prev]<arr[prev-1]){
+            swap(arr[prev-1],arr[prev]);
+            prev--;
+        }
+    }
+}
 int main(){
-
-    vector<int> arr ={41, 9, 9, 48, 11, 2};
+    vector<int> arr ={3,2,1,5};
    BubbleSort(arr);
     for(auto i : arr){
         cout<<i<<" ";
